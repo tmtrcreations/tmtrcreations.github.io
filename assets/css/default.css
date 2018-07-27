@@ -101,6 +101,8 @@ a:hover
 {
 	margin: 0px auto;
 	/*width: 1200px;*/
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /*********************************************************************************/
@@ -596,7 +598,7 @@ ul.contact li a.icon-rss:before
 #page
 {
 	overflow: hidden;
-	padding: 6em 0em 0em 0em;
+	padding: 0em 0em 0em 0em;
 	background: #FFF;
 	text-align: center;
 }
