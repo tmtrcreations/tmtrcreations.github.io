@@ -184,6 +184,24 @@ ul.style1 .image-left
 	margin-bottom: 0;
 }
 
+ul.style1 h1
+{
+    padding: 1.2em 0em 1em 0em;
+    letter-spacing: 0.10em;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #454445;
+}
+
+ul.style1 h2
+{
+    padding: 1.2em 0em 1em 0em;
+    letter-spacing: 0.10em;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #454445;
+}
+
 ul.style1 h3
 {
 	padding: 1.2em 0em 1em 0em;
