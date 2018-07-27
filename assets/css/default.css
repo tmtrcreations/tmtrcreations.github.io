@@ -187,19 +187,17 @@ ul.style1 .image-left
 ul.style1 h1
 {
     padding: 1.2em 0em 1em 0em;
-    letter-spacing: 0.10em;
     font-size: 1.8em;
     font-weight: 600;
-    color: #454445;
+    color: #000000;
 }
 
 ul.style1 h2
 {
     padding: 1.2em 0em 1em 0em;
-    letter-spacing: 0.10em;
     font-size: 1.4em;
     font-weight: 600;
-    color: #454445;
+    color: #6c6c6c;
 }
 
 ul.style1 h3
