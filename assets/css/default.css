@@ -18,11 +18,20 @@ body
 	color: #6c6c6c
 }
 
-h1, h2, h3
+h1
 {
     letter-spacing: 0.10em;
     text-transform: uppercase;
-    font-size: 3em;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #454445;
+}
+
+h2, h3
+{
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-size: 2em;
     font-weight: 600;
     color: #454445;
 }
@@ -112,7 +121,7 @@ a:hover
 
 figure
 {
-    margin-top: 5em;
+    margin-top: 1em;
 }
 
 .image
