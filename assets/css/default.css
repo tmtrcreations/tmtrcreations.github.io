@@ -159,6 +159,8 @@ ul.style1
 	overflow: hidden;
 	list-style: none;
 	color: #6c6c6c
+    margin-right: auto;
+    margin-left: auto;
 }
 
 ul.style1 li
