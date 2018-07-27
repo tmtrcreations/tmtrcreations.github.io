@@ -634,9 +634,9 @@ ul.contact li a.icon-rss:before
     /*float: right;*/
     /*width: 450px;*/
     width: 90%;
-    margin-left: 2.5em;
-    margin-right: 2.5em;
     margin-top: 8em;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #stwo-col
