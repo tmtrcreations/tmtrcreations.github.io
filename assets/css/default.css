@@ -593,6 +593,8 @@ ul.contact li a.icon-rss:before
 #wrapper
 {
 	background: #FFF;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #page
