@@ -34,6 +34,7 @@ title: Morty GAN
             img = img.div(tf.max(img))
             img = img.mul(tf.scalar(255))
             img = img.cast('int32')
+            console.log(img)
             
             // Display the image
             tf.toPixels(img, document.getElementsByTagName("canvas")[0]).then(function(){
