@@ -30,15 +30,15 @@ title: Morty GAN
                                                                                     
             // Scale the image
             img = img.as3D(160,160,3)
-            img = img.sub(tf.min(img))
-            img = img.div(tf.max(img))
-            img = img.mul(tf.scalar(255))
-            img = img.cast('int32')
-            console.log(img)
-            img.print()
+            //img = img.sub(tf.min(img))
+            //img = img.div(tf.max(img))
+            //img = img.mul(tf.scalar(255))
+            //img = img.cast('int32')
+            //console.log(img)
+            //img.print()
             
             // Display the image
-            tf.toPixels(img, document.getElementsByTagName("canvas")[0]).then(function(){
+            tf.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
                 // Debug statement
                 console.log("Displayed")
             });
