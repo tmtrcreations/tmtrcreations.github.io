@@ -30,7 +30,7 @@ title: Morty GAN
                                                                                     
             // Scale the image
             img = img.as3D(160,160,3)
-            img = img.add(tf.min(img))
+            img = img.sub(tf.min(img))
             img = img.div(tf.max(img))
             
             // Display the image
