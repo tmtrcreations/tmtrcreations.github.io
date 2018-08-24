@@ -1,0 +1,44 @@
+---
+layout: projects
+title: Morty GAN
+---
+
+<!-- Load TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+
+<!-- Main script for generating new Morty image -->
+<script>
+    
+    //----- Define image generation function -----
+    function genImage(){
+        // Debug statement
+        console.log("Inside genImage");
+        // Load the model
+        tf.loadModel('https://tmtrcreations.com/assets/Aug21.json/model.json').then(function(model){
+                                                                                    
+            // Debug statement
+            console.log("Loaded model");
+            
+            // Create noise to generate a Morty image
+            noise = tf.randomNormal([1, 100]);
+            
+            // Create the image
+            img = model.predict(noise);
+            
+            // Debug statement
+            console.log(img);
+            
+            // Display the image
+            tf.toPixels(img.as3D(160,160,3).add(1).div(2), document.getElementsByTagName("canvas")[0]).then(function(){
+                // Debug statement
+                console.log("Displayed")
+            });
+
+        });
+    }
+
+</script>
+
+<div>
+    <canvas></canvas>
+</div>
