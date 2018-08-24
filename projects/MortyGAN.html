@@ -28,14 +28,8 @@ title: Morty GAN
             // Debug statement
             console.log(img);
                                                                                     
-            // Scale the image
+            // Resize the image
             img = img.as3D(160,160,3)
-            //img = img.sub(tf.min(img))
-            //img = img.div(tf.max(img))
-            //img = img.mul(tf.scalar(255))
-            //img = img.cast('int32')
-            //console.log(img)
-            //img.print()
             
             // Display the image
             tf.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
@@ -55,6 +49,7 @@ title: Morty GAN
     <div id="banner-wrapper">
         <div id="banner" class="container">
             <h2>Morty GAN</h2>
+            <h5>The image can take a while depending on OS and internet speed.</h5>
             <canvas height="120" width="120"></canvas>
             <br>
             <button onclick="genImage()" type="button">Generate New Morty!</button>
