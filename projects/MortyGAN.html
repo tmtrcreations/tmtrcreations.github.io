@@ -37,6 +37,8 @@ title: Morty GAN
             // Resize and scale the image
             img = img.as3D(160,160,3);
             img = img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32');
+            
+            return img;
         });
         
         // Get the canvas for displaying
