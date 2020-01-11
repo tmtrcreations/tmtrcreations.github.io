@@ -27,24 +27,27 @@ title: Morty GAN
         let noise = tf.randomNormal([1, 100]);
 
         // Create the image
-        let img = model.predict(noise);
+        let img_final = tf.tidy(() => {
+            // Predict
+            let img = model.predict(noise);
+            
+            // Debug statement
+            //console.log(img);
 
-        // Debug statement
-        //console.log(img);
-
-        // Resize and scale the image
-        img = img.as3D(160,160,3);
-        img = img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32')
+            // Resize and scale the image
+            img = img.as3D(160,160,3);
+            img = img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32');
+        });
         
         // Get the canvas for displaying
         let canvas = document.getElementsByTagName("canvas")[0]
 
         // Display the image
-        tf.browser.toPixels(img, canvas).then(function(){
+        tf.browser.toPixels(img_final, canvas).then(function(){
             // Debug statement
             //console.log("Displayed");
             // Clean up the tenosr
-            tf.dispose(img);
+            tf.dispose(img_final);
             tf.dispose(noise);
             console.log(tf.memory());
         });
