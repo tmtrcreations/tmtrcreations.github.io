@@ -33,7 +33,7 @@ title: Morty GAN
         console.log(img);
 
         // Resize the image
-        img = img.as3D(160,160,3);
+        let img = img.as3D(160,160,3);
 
         // Display the image
         tf.browser.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
