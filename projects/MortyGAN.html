@@ -10,8 +10,8 @@ title: Morty GAN
 <script>
     
     //----- Define model loading function -----
-    async function loadModel(){
-        const model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
+    function loadModel(){
+        model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
         // Debug statement
         console.log("Model loaded");
         
@@ -44,7 +44,7 @@ title: Morty GAN
     }
 
     // Load the model
-    let model =  await loadModel();
+    model = loadModel();
     
     // Generate a new Morty image
     genImage(model);
