@@ -10,19 +10,18 @@ title: Morty GAN
 <script>
     
     //----- Define model loading function -----
-    async function loadModel(){
-        let model = await tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
+    function loadModel(){
+        model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
         // Debug statement
         console.log("Model loaded");
         
-        return await model
+        return model
     }
     
     //----- Define image generation function -----
-    async function genImage(model){
+    function genImage(model){
         // Debug statement
-        console.log("Inside genImage");
-        await model    
+        console.log("Inside genImage");  
         
         // Create noise to generate a Morty image
         noise = tf.randomNormal([1, 100]);
@@ -45,7 +44,7 @@ title: Morty GAN
     }
 
     // Load the model
-    model = loadModel();
+    model =  await loadModel();
     
     // Generate a new Morty image
     genImage(model);
