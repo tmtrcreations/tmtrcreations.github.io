@@ -9,39 +9,45 @@ title: Morty GAN
 <!-- Main script for generating new Morty image -->
 <script>
     
+    //----- Define model loading function -----
+    async function loadModel(){
+        let model = await tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
+        // Debug statement
+        console.log("Model loaded");
+        
+        return model
+    }
+    
     //----- Define image generation function -----
-    function genImage(){
+    function genImage(model){
         // Debug statement
         console.log("Inside genImage");
-        // Load the model
-        tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json').then(function(model){
-                                                                                    
-            // Debug statement
-            console.log("Loaded model");
             
-            // Create noise to generate a Morty image
-            noise = tf.randomNormal([1, 100]);
-            
-            // Create the image
-            img = model.predict(noise);
-            
-            // Debug statement
-            console.log(img);
-                                                                                    
-            // Resize the image
-            img = img.as3D(160,160,3)
-            
-            // Display the image
-            tf.browser.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
-                // Debug statement
-                console.log("Displayed")
-            });
+        // Create noise to generate a Morty image
+        noise = tf.randomNormal([1, 100]);
 
+        // Create the image
+        img = model.predict(noise);
+
+        // Debug statement
+        console.log(img);
+
+        // Resize the image
+        img = img.as3D(160,160,3)
+
+        // Display the image
+        tf.browser.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
+            // Debug statement
+            console.log("Displayed")
         });
+
     }
 
+    // Load the model
+    model = loadModel();
+    
     // Generate a new Morty image
-    genImage();
+    genImage(model);
 
 </script>
 
@@ -52,7 +58,7 @@ title: Morty GAN
             <h5>The image can take a while depending on OS and internet speed.</h5>
             <canvas height="120" width="120"></canvas>
             <br>
-            <button onclick="genImage()" type="button">Generate New Morty!</button>
+            <button onclick="genImage(model)" type="button">Generate New Morty!</button>
         </div>
     </div>
 </div>
