@@ -40,10 +40,9 @@ title: Morty GAN
         tf.browser.toPixels(img, document.getElementsByTagName("canvas")[0]).then(function(){
             // Debug statement
             //console.log("Displayed");
+            // Clean up the tenosr
+            tf.dispose(img);
         });
-        
-        // Clean up the tenosr
-        tf.dispose(img);
 
     }
 
