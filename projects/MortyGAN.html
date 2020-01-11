@@ -48,10 +48,9 @@ title: Morty GAN
     promise = loadModel();
     promise.then(function(value){
         model = value;
+        // Generate a new Morty image
+        genImage(model);
     });
-    
-    // Generate a new Morty image
-    genImage(model);
 
 </script>
 
