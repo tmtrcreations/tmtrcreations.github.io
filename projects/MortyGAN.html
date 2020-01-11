@@ -11,7 +11,7 @@ title: Morty GAN
     
     //----- Define model loading function -----
     async function loadModel(){
-        model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
+        const model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
         // Debug statement
         console.log("Model loaded");
         
