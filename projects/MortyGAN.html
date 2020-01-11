@@ -11,7 +11,7 @@ title: Morty GAN
     
     //----- Define model loading function -----
     function loadModel(){
-        model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
+        let model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
         // Debug statement
         console.log("Model loaded");
         
@@ -24,10 +24,10 @@ title: Morty GAN
         console.log("Inside genImage");  
         
         // Create noise to generate a Morty image
-        noise = tf.randomNormal([1, 100]);
+        let noise = tf.randomNormal([1, 100]);
 
         // Create the image
-        img = model.predict(noise);
+        let img = model.predict(noise);
 
         // Debug statement
         console.log(img);
