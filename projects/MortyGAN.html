@@ -13,7 +13,7 @@ title: Morty GAN
     function loadModel(){
         let model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
         // Debug statement
-        console.log("Model loaded");
+        //console.log("Model loaded");
         
         return model;
     }
@@ -21,7 +21,7 @@ title: Morty GAN
     //----- Define image generation function -----
     function genImage(model){
         // Debug statement
-        console.log("Inside genImage");  
+        //console.log("Inside genImage");  
         
         // Create noise to generate a Morty image
         let noise = tf.randomNormal([1, 100]);
@@ -30,15 +30,15 @@ title: Morty GAN
         let img = model.predict(noise);
 
         // Debug statement
-        console.log(img);
+        //console.log(img);
 
         // Resize the image
-        let img = img.as3D(160,160,3);
+        img = img.as3D(160,160,3);
 
         // Display the image
         tf.browser.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
             // Debug statement
-            console.log("Displayed");
+            //console.log("Displayed");
         });
 
     }
