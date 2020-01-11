@@ -47,7 +47,7 @@ title: Morty GAN
     model = loadModel();
     
     // Generate a new Morty image
-    model.then(function(){
+    model.then(function(model){
         genImage(model);
     });
 
