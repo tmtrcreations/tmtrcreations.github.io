@@ -19,10 +19,11 @@ title: Morty GAN
     }
     
     //----- Define image generation function -----
-    function genImage(model){
+    async function genImage(model){
         // Debug statement
         console.log("Inside genImage");
-            
+        await model    
+        
         // Create noise to generate a Morty image
         noise = tf.randomNormal([1, 100]);
 
