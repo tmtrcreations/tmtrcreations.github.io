@@ -35,9 +35,12 @@ title: Morty GAN
         // Resize and scale the image
         img = img.as3D(160,160,3);
         img = img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32')
+        
+        // Get the canvas for displaying
+        let canvas = document.getElementsByTagName("canvas")[0]
 
         // Display the image
-        tf.browser.toPixels(img, document.getElementsByTagName("canvas")[0]).then(function(){
+        tf.browser.toPixels(img, canvas).then(function(){
             // Debug statement
             //console.log("Displayed");
             // Clean up the tenosr
